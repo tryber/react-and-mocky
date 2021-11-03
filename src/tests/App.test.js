@@ -6,11 +6,10 @@ import mocks from './mocks'
 describe('Test Rick & Morty API', () => {
 
   beforeEach(()=>{
-    //Fazer o mock do fetch aqui 
     global.fetch = jest.fn().mockResolvedValue({
       json: jest.fn().mockResolvedValue(mocks),
     })
-    render(<App/>)
+    render(<App/>);
   })
   
   test('Verifica se aparece o card com titulo de "Rick Sanchez"', () => {
@@ -30,8 +29,8 @@ describe('Test Rick & Morty API', () => {
   test('Verifica se ao buscar por "Smith" aparecem 4 cards', async () => {
     const input = screen.getByRole('textbox');
     const button = screen.getByRole('button', { name: 'Buscar'});
-    userEvent.type(input, 'Smith')
-    userEvent.click(button)
+    userEvent.type(input, 'Smith');
+    userEvent.click(button);
     const cards = screen.getAllByAltText(/Smith/i);
     expect(cards).toHaveLength(4);
   })
