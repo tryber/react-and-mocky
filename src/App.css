@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App{
+  width: 100vw;
+  height: 100vh;
+}
+
+input[type=text]{
+  padding: 1rem;
+  width:70%;
+  font-size: 14px !important;
+}
+button {
+  background-color: #2d6a4f;
+  width: 30%;
+ padding: 1rem;
+ color: white;
+ cursor: pointer;
+}
+
+button:hover{
+  background-color: #40916c;
+}
+
+.card-list{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+form {
+  margin: 3rem auto 1rem auto;
+  width: 50%;
+}

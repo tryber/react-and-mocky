@@ -1,0 +1,11 @@
+.card{
+    max-width: 350px;
+    width: 100%;
+    margin: 2rem 0;
+    
+}
+
+.card-name{
+    color:#2d6a4f;
+
+}
