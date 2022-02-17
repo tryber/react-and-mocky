@@ -28,7 +28,8 @@ class App extends React.Component {
     this.setState({search:value})
   }
 
-  handleFilterCharacters = () => {
+  handleFilterCharacters = (e) => {
+    e.preventDefault()
     const { characters, search} = this.state;
     const filteredArray = characters.filter(({name})=> name.toUpperCase().includes(search.toUpperCase()))
     this.setState({filteredCharacters:filteredArray})
@@ -38,9 +39,9 @@ class App extends React.Component {
     const {filteredCharacters, isLoading} = this.state
     return (
       <div className="App">
-        <form>
+        <form onSubmit={this.handleFilterCharacters}>
           <input type='text' placeholder='Rick Sanchez...' onChange={this.handleOnChange}/>
-          <button type='button' onClick={this.handleFilterCharacters}>Buscar</button>
+          <button type='submit' >Buscar</button>
         </form>
         {
           isLoading ? <Loading/> : 
