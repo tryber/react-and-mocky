@@ -39,7 +39,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <form>
-          <input type='text' placeholder='Rick Sanches...' onChange={this.handleOnChange}/>
+          <input type='text' placeholder='Rick Sanchez...' onChange={this.handleOnChange}/>
           <button type='button' onClick={this.handleFilterCharacters}>Buscar</button>
         </form>
         {
