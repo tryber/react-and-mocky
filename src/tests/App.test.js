@@ -6,7 +6,6 @@ import responseAPI from './mocks';
 describe('Test Rick & Morty API', () => {
 
   beforeEach(()=>{
-    //Fazer o mock do fetch aqui 
     jest.spyOn(global, 'fetch').mockResolvedValue({ json: jest.fn().mockResolvedValue(responseAPI) });
     render(<App/>)
   })
@@ -27,7 +26,7 @@ describe('Test Rick & Morty API', () => {
     const button = screen.getByRole('button');
     userEvent.type(input, 'Smith');
     userEvent.click(button);
-    const card = await screen.findAllByRole('heading', { value: 3 })
+    const card = await screen.findAllByRole('heading', { value: 3 });
     expect(card.length).toBe(4);
   })
 })
