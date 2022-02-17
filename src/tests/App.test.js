@@ -18,7 +18,10 @@ describe('Test Rick & Morty API', () => {
   })
 
   test('Verifica se existem o input de texto e o botão "Buscar"', () => {
-    
+    const inputEl = screen.getByRole( 'textbox', {placeholder: 'Rick Sanchez...'});
+    const buttonEl = screen.getByRole( 'button' );
+    expect( inputEl ).toBeInTheDocument();
+    expect( buttonEl ).toBeInTheDocument();
   })
 
   test('Verifica se ao buscar por "Smith" aparecem 4 cards', () => {
