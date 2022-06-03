@@ -1,6 +1,6 @@
 # React and Mocky
 
-Nessa aplicação nós utilizamos a [API do Rick](https://rickandmortyapi.com/) and Morty para buscar os personagens. O endpoint utilizado é o `[https://rickandmortyapi.com/api/character](https://rickandmortyapi.com/api/character)` 
+Nessa aplicação nós utilizamos a [API do Rick and Morty](https://rickandmortyapi.com/) para buscar os personagens. O endpoint utilizado é o `https://rickandmortyapi.com/api/character` 
 
 O objetivo é escrever os testes para a aplicação utilizando o RTL - React Testing Library. Todos os testes devem utilizar o `ByRole`
   
