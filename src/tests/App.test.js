@@ -6,10 +6,10 @@ import userEvent from '@testing-library/user-event'
 describe('Test Rick & Morty API', () => {
 
   beforeEach(()=>{
-    //global.fetch = jest.fn().mockResolvedValue({json: jest.fn().mockResolvedValue(responseAPI)})
-    // global.fetch = async () => ({json: async() => responseAPI})
-    // render(<App/>)
-  // })
+    global.fetch = jest.fn().mockResolvedValue({json: jest.fn().mockResolvedValue(responseAPI)})
+    global.fetch = async () => ({json: async() => responseAPI})
+    render(<App/>)
+  })
     
     jest.spyOn(global, 'fetch').mockResolvedValue({
       json: jest.fn().mockResolvedValue(mocks)
