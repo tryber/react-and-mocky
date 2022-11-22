@@ -5,17 +5,18 @@ import responseAPI from './mocks'
 
 describe('Test Rick & Morty API', () => {
 
+const results = responseAPI.results;
   beforeEach(()=>{
   global.fetch = jest.fn().mockResolvedValue({
     json: jest.fn().mockResolvedValue({
-      responseAPI,
+      results,
     })
   })    
     render(<App/>)
   })
   
   test('Verifica se aparece o card com titulo de "Rick Sanchez"', () => {
-    const h3El = screen.getByRole("heading", {level: 3});
+    const h3El = screen.getByRole("heading", {name: /Rick Sanchez/i });
     expect(h3El).toBeInTheDocument();
   })
 
@@ -33,7 +34,7 @@ describe('Test Rick & Morty API', () => {
 
     userEvent.type(inputEl, "Smith");
     userEvent.click(buttonEl);
-    expect(h3El).toHaveLength(3);
+    expect(h3El).toHaveLength(4);
   })
 
 })
